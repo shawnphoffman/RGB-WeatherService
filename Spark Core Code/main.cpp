@@ -66,14 +66,14 @@ int curBlue  = 0;
 int curGreen = 0;
 
 // Initial Setup
-void setup() 
+void setup()
 {
     pinMode(redPin, OUTPUT);
     pinMode(greenPin, OUTPUT);
     pinMode(bluePin, OUTPUT);
-    
+
     Spark.function("setColor", setColor);
-    
+
     Spark.variable("redPin",   &redPin,   INT);
     Spark.variable("greenPin", &greenPin, INT);
     Spark.variable("bluePin",  &bluePin,  INT);
@@ -83,10 +83,10 @@ void setup()
 }
 
 // Program Loop
-void loop() 
+void loop()
 {
     fader f(redPin, bluePin, greenPin);
-    
+
     f.fade(curColor, curColor);
 }
 
