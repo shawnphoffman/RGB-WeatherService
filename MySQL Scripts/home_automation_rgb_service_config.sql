@@ -1,22 +1,22 @@
-CREATE DATABASE  IF NOT EXISTS `home_automation`;
-USE `home_automation`;
+CREATE DATABASE  IF NOT EXISTS WeatherStationDB;
+USE WeatherStationDB;
 
-DROP TABLE IF EXISTS `rgb_service_config`;
-CREATE TABLE `rgb_service_config`
+DROP TABLE IF EXISTS rgb_service_config;
+CREATE TABLE rgb_service_config
 (
-  `id` int  (2) NOT NULL AUTO_INCREMENT,
-  `value_type` varchar  (20) DEFAULT NULL,
-  `value_name` varchar  (50) DEFAULT NULL,
-  `value_low` int  (4) NOT NULL DEFAULT '0',
-  `value_high` int  (4) NOT NULL DEFAULT '0',
-  `color` varchar  (6) NOT NULL DEFAULT 'FFFFFF',
-  `last_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `override` bit  (1) NOT NULL DEFAULT b'0',
-  PRIMARY KEY   (`id`)
+  id int  (2) NOT NULL AUTO_INCREMENT,
+  value_type varchar  (20) DEFAULT NULL,
+  value_name varchar  (50) DEFAULT NULL,
+  value_low int  (4) NOT NULL DEFAULT '0',
+  value_high int  (4) NOT NULL DEFAULT '0',
+  color varchar  (6) NOT NULL DEFAULT 'FFFFFF',
+  last_modified timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  override bit  (1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY   (id)
 );
 
 
-INSERT INTO `rgb_service_config` VALUES
+INSERT INTO rgb_service_config VALUES
   (1,'temp',NULL,-20,-10,'B500FF','2014-02-06 04:26:28','\0'),
   (2,'temp',NULL,-10,0,'9400FF','2014-03-04 15:06:32','\0'),
   (3,'temp',NULL,0,9,'0058CD','2014-03-04 03:31:56','\0'),
@@ -108,4 +108,3 @@ INSERT INTO `rgb_service_config` VALUES
   (166,'setting','Location',46062,0,'46063','2014-02-02 22:05:35','\0'),
   (167,'setting','Frequency',15,0,'26','2014-03-02 15:54:53','\0'),
   (168,'temp',NULL,-30,-20,'FF00FF','2014-02-11 13:47:05','\0');
-
