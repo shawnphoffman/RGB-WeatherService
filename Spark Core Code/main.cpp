@@ -85,7 +85,7 @@ void setup()
 // Program Loop
 void loop()
 {
-    fader f(redPin, bluePin, greenPin);
+    fader f(redPin, greenPin, bluePin);
 
     f.fade(curColor, curColor);
 }
@@ -93,7 +93,7 @@ void loop()
 // Set Color Function
 int setColor(String args)
 {
-    fader f(redPin, bluePin, greenPin);
+    fader f(redPin, greenPin, bluePin);
     curRed   = args.substring(0,3).toInt();
     curGreen = args.substring(3,6).toInt();
     curBlue  = args.substring(6,9).toInt();
